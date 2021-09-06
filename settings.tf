@@ -14,8 +14,7 @@ provider "aws" {
     region = "us-east-1"    
 }
 data "terraform_remote_state" "myBackend" {
-   backend = "s3"
-   config {
+   backend "s3" {
        bucket = "terraform-state-prod-1"
        key = "network/terraform.tfstate"
        region = "us-east-1"
