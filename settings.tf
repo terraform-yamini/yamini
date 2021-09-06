@@ -1,22 +1,20 @@
 terraform {
-    required_providers {
-        aws = {
-            source = "hashicorp/aws"
-       }
-       random = {
-           source = "hashicorp/random"
-           version = "3.1.0"
-       }
+  # Required Terraform Version
+  required_version = "~> 1.0.6"
+  # Required Providers and their Versions
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.21" # Optional but recommended
     }
-}
-provider "aws" {
-    profile = "default"
-    region = "us-east-1"    
-}
-data "terraform_remote_state" "myBackend" {
-   backend "s3" {
-       bucket = "terraform-state-prod-1"
-       key = "network/terraform.tfstate"
-       region = "us-east-1"
-   }
+    random = {
+      source = "hashicorp/random"
+      version = "3.0.1"
+    }
+  }
+  # Remote Backend for storing Terraform State in S3 bucket 
+  backend "s3" {
+    bucket = "terraform-state-prod-1"
+    region = "us-east-1"
+  }
 }
