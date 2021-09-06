@@ -3,6 +3,6 @@ resource "aws_instance" "my-ec2-vm" {
     instance_type = "t2.micro"
     availability_zone = "us-east-1a"
     tags {
-        "Name" = "web"
+        Name = "web"
     }
 }
