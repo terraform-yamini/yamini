@@ -1,10 +1,11 @@
 # Resource-8: Create EC2 Instance
 resource "aws_instance" "my-ec2-vm" {
-  ami                    = "ami-047a51fa27710816e"
+  ami                    = var.ec2_ami_id
   instance_type          = "t2.micro"
   key_name               = "terraform-key"
   subnet_id              = aws_subnet.vpc-dev-public-subnet-1.id
   vpc_security_group_ids = [aws_security_group.dev-vpc-sg.id]
+  count = var.ec2_instance_count
   #user_data = file("apache-install.sh")
   user_data = <<-EOF
     #!/bin/bash
