@@ -19,10 +19,10 @@ variable "ec2_instance_count" {
 variable "db_username" {
     description = "aws rds string"
     type = string 
-    sensitive = true
+    sensitive = false
 }
 variable "db_password" {
     description = "aws rds password"
     type = string 
-    sensitive = true
+    sensitive = false
 }
