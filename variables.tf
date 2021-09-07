@@ -20,12 +20,13 @@ variable "ec2_instance_count" {
   type        = number
   default     = 2
 }
-
+/*
 variable "ec2_instance_type" {
   description = "EC2 Instance Type"
   type = string
   default = ["t3.micro", "t3.small", "t3.large"]
 }
+*/
 variable "ec2_instance_tags" {
   description = "EC2 Instance Tags"
   type = map(string)
