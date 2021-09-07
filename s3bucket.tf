@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "mys3bucket" {
+resource "aws_s3_bucket" "mys3bucketyamini" {
 
   # for_each Meta-Argument
   for_each = {
