@@ -4,7 +4,11 @@ variable "aws_region" {
   type        = string
   default     = "us-east-1"
 }
-
+variable "ec2_instance_type" {
+  description = "Region in which AWS resources to be created"
+  type        = string
+  default     = "t2.micro"
+}
 variable "ec2_ami_id" {
   description = "AMI ID"
   type        = string
