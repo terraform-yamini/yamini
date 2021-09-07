@@ -1,11 +1,11 @@
-resource "aws_s3_bucket" "myawsbucketyaminiaws" {
+resource "aws_s3_bucket" "myawsbucketyaminiaws123" {
 
   # for_each Meta-Argument
   for_each = {
-    dev  = "my-dappyamini-bucket"
-    qa   = "my-qappyamini-bucket"
-    stag = "my-sappyamini-bucket"
-    prod = "my-pappyamini-bucket"
+    dev  = "my-dappyamini123-bucket"
+    qa   = "my-qappyamini123-bucket"
+    stag = "my-sappyamini123-bucket"
+    prod = "my-pappyamini123-bucket"
   }
 
   bucket = "${each.key}-${each.value}"
