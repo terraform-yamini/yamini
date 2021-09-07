@@ -16,3 +16,13 @@ variable "ec2_instance_count" {
   type        = number
   default     = 1
 }
+variable "db_username" {
+    description = "aws rds string"
+    type = string 
+    sensitive = true
+}
+variable "db_password" {
+    description = "aws rds password"
+    type = string 
+    sensitive = true
+}
