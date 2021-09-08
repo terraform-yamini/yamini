@@ -10,7 +10,7 @@ locals {
   }
 }
 
-resource "aws_instance" "my-ec2-vm" {
+resource "aws_instance" "my-ec2-vm-2" {
   ami           = data.aws_ami.amzlinux.id
   instance_type = var.ec2_instance_type
  # key_name      = "terraform-key"
