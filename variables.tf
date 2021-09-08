@@ -10,5 +10,5 @@ variable "ec2_ami_id" {
 */
 variable "ec2_instance_type" {
     type = string 
-    default = "t3.micro"
+    default = "t2.small"
 }

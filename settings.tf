@@ -14,7 +14,8 @@ terraform {
   }
   # Remote Backend for storing Terraform State in S3 bucket 
   backend "s3" {
-    bucket = "terraform-state-prod-1"
+    bucket = "terraform-stacksimply-yamini"
+    key = "dev/terraform.tfstate"
     region = "us-east-1"
   }
 }
