@@ -19,8 +19,5 @@ terraform {
     region = "us-east-1"
     dynamodb_table = "terraform-dev-state-table"
   }
-  provider "aws" {
-  region  = var.aws_region
-  profile = "default"
-}
+
 }
