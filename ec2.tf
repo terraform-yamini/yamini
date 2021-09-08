@@ -3,9 +3,9 @@ resource "aws_instance" "my-ec2-vm" {
   instance_type = var.ec2_instance_type
  # key_name      = "terraform-key"
 	user_data = file("apache-install.sh")  
-  
+  count = terraform.workspace == "default" ? 2 : 1
   vpc_security_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
   tags = {
-    "Name" = "amz-linux-vm"
+    "Name" = "vm-${terraform.workspace}-${count.index}"
   }
 }
