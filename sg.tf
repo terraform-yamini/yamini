@@ -16,6 +16,7 @@ resource "aws_security_group" "vpc-ssh" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = local.common_tags
 }
 
 # Create Security Group - Web Traffic
@@ -46,4 +47,5 @@ resource "aws_security_group" "vpc-web" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = local.common_tags
 }
