@@ -16,7 +16,6 @@ resource "aws_instance" "my-ec2-vm" {
  # key_name      = "terraform-key"
 #	user_data = file("apache-install.sh") 
   user_data = templatefile("user_data.tmpl",{package_name = var.package_name}) 
-  count = terraform.workspace == "default" ? 2 : 1
   vpc_security_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
   count = (var.high_availablity == true ? 2 : 1)
   tags = {
