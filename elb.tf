@@ -21,7 +21,7 @@ resource "aws_elb" "elb" {
   connection_draining_timeout = 400
 
   # Splat Expression
-  instances                   = aws_instance.my-ec2-vm[*].id
+  instances                   = aws_instance.my-ec2-vm-2[*].id
 
   # Dynamic Expressions
   count = (var.high_availability == true ? 1 : 0)
